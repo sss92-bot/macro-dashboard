@@ -94,7 +94,7 @@ const cards=[['Growth axis',sc(last(S.gaxis)),arrow(tr3(S.gaxis,1),'std')],
  
  ['Recession prob',(last(S.recprob)??'–')+'%',arrow(tr3(S.recprob,0),'inv')]];
 document.getElementById('cards').innerHTML=cards.map(([l,v,t])=>`<div class="card"><div class="l">${l}</div><div class="v" style="color:${(''+v).startsWith('-')?'#f87171':'#e8edf7'}">${v}</div><div class="t">${t}</div></div>`).join('');
-const TABS=PUB?['Main']:['Main','Labor','Growth','Housing','Inflation','Fiscal'];
+const TABS=PUB?['Main']:['Main'];
 document.getElementById('tabs').innerHTML=PUB?'':TABS.map((t,i)=>`<button class="${i?'':'on'}" data-t="${t}">${t}</button>`).join('');
 document.getElementById('panes').innerHTML=`
 <div class="pane on" id="p-Main"><div class="grid">
